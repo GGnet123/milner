@@ -1,0 +1,103 @@
+{% extends 'layouts/default.njk' %}
+{% set title = "Мой Miller Music Amplified" %}
+
+{% block content %}
+<main class="profile">
+    <section class="container">
+        <div class="profile-headline">
+            <h1 class="profile-head">Мой Miller Music Amplified</h1>
+            <a class="profile-btn" href="../index.html">Выйти</a>
+        </div>
+
+        <div class="profile-user">
+            <div class="profile-user-item">
+                <span class="profile-user-sub">Ты вошёл как</span>
+                <span class="profile-user-head">Кирилл</span>
+            </div>
+            <div class="profile-user-item">
+                <span class="profile-user-sub">Твой номер телефона</span>
+                <span class="profile-user-head">+7 777 123-45-67</span>
+            </div>
+            <div class="profile-user-item">
+                <span class="profile-user-sub">Ты накопил</span>
+                <span class="profile-user-badge">123 балла</span>
+            </div>
+        </div>
+
+        <div class="profile-register">
+            <span class="profile-register-head">Регистрация кода</span>
+            <span class="profile-register-sub">Ты получишь 2 балла за регистрацию кода из бара и 1 балл за код из мультипака</span>
+
+            <form class="profile-register-form">
+                <input class="profile-register-input" type="text" data-inputmask="'mask': '****-****-****-****'">
+                <button class="profile-register-btn" type="submit">Зарегистрировать</button>
+            </form>
+        </div>
+
+        <div class="profile-dop">
+            <span class="profile-dop-head">Лёгкий способ</span>
+            <span class="profile-dop-sub">Заработать дополнительные баллы</span>
+        </div>
+
+        <div class="profile-referal">
+            <span class="profile-referal-head">3 балла за 5 друзей</span>
+            <span class="profile-referal-sub">Пригласи друзей с помощью ссылки и получи 3 балла</span>
+
+            <form class="profile-referal-form">
+                <input class="profile-referal-input" id="referal" type="text" value="https://m-music.kz/?ref=fklie" readonly="readonly">
+                <button class="profile-referal-btn btn-clipboard" type="button" data-clipboard-target="#referal">Скопировать</button>
+            </form>
+        </div>
+
+        <div class="profile-referal">
+            <span class="profile-referal-head">3 балла за тест</span>
+            <span class="profile-referal-sub">Ответь на 6 простых вопросов и получи 3 балла</span>
+
+            <a class="profile-referal-btn" href="../profile/test.html">Пройти тест</a>
+
+        </div>
+
+        <div class="profile-insta">
+            <span class="profile-insta-head">3 балла за фото в Instagram или Facebook</span>
+            <span class="profile-insta-sub">Загрузи фото в форму ниже, скачай фото с рамкой и размести у себя на странице и получи 3 балла</span>
+
+            <div class="profile-insta-step">
+                <span class="profile-insta-step-head">Шаг №1</span>
+                <span class="profile-insta-step-sub">Загрузите фото из бара Miller</span>
+
+                <input class="profile-insta-step-btn" type="file" title="Выберите файл">Обзор..</input>
+            </div>
+
+            <div class="profile-insta-step">
+                <span class="profile-insta-step-head">Шаг №2</span>
+                <span class="profile-insta-step-sub">Скачайте фото с рамкой Miller</span>
+
+                <button class="profile-insta-step-btn" type="button" name="button"></button>
+            </div>
+
+            <div class="profile-insta-step">
+                <span class="profile-insta-step-head">Шаг №3</span>
+                <span class="profile-insta-step-sub">Скачайте фото с рамкой Miller</span>
+
+                <textarea class="profile-insta-step-textarea" id="hashtags" name="name" rows="8" cols="80" value="#miller #millermusicamplified #genuinedraft" readonly="readonly"></textarea>
+
+                <button class="profile-insta-step-btn btn-clipboard" type="button" data-clipboard-target="#hashtags">Скопировать</button>
+
+            </div>
+
+            <div class="profile-insta-step">
+                <span class="profile-insta-step-head">Шаг №4</span>
+                <span class="profile-insta-step-sub"></span>
+
+                <input class="profile-insta-step-input" type="text">
+
+
+                <button class="profile-insta-step-btn" type="button">Проверить</button>
+
+            </div>
+
+        </div>
+
+    </section>
+</main>
+{% endblock %}

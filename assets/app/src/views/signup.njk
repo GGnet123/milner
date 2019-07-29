@@ -1,0 +1,45 @@
+{% extends 'layouts/clean.njk' %}
+{% set title = "Регистрация" %}
+
+{% block content %}
+<main class="signup">
+    <section class="container">
+        <section class="row justify-content-center">
+            <section class="col-md-4">
+                <form class="signup-form">
+                    <img class="signup-logo" src="../images/common/logo.png" alt="Miller Music Amplified">
+
+                    <div class="signup-controls">
+                        <a class="signup-controls-link" href="../login.html">Вход</a>
+                        <span class="signup-controls-divider">/</span>
+                        <span class="signup-controls-current">Регистрация</span>
+                    </div>
+
+                    <div class="signup-form-item">
+                        <label class="signup-form-item-label" for="name">Имя</label>
+                        <input class="signup-form-item-input" name="name" type="text">
+                    </div>
+
+                    <div class="signup-form-item">
+                        <label class="signup-form-item-label" for="phone">Номер телефона</label>
+                        <input class="signup-form-item-input" type="text" data-inputmask="'mask': '+7(799) 999-99-99'">
+                    </div>
+
+                    <div class="signup-form-item">
+                        <label class="signup-form-item-label" for="phone">Электропочта</label>
+                        <input class="signup-form-item-input" type="email">
+                    </div>
+
+                    <div class="signup-form-item">
+                        <label class="signup-form-item-label" for="phone">Пароль</label>
+                        <input class="signup-form-item-input" type="password">
+                    </div>
+
+                    <button class="signup-form-btn" type="submit" name="button">Зарегистрироваться</button>
+                </form>
+
+            </section>
+        </section>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,153 @@
+.signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-form {
+        border: 2px solid $gold;
+
+        padding: 1.25rem 2rem;
+        border-radius: 0.5rem;
+
+        @include media-breakpoint-down(md) {
+            padding-left: 0;
+            padding-right: 0;
+            border: none;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            justify-content: flex-start;
+
+            margin-bottom: 1.5rem;
+
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+
+            &-label {
+                display: block;
+
+                color: $white;
+                font-size: $font-size-lg;
+                font-weight: $font-weight-medium;
+                line-height: 1.2;
+
+                text-transform: uppercase;
+
+                margin: 0;
+                padding: 0;
+
+                margin-bottom: 0.25rem;
+            } // &-label
+
+            &-input {
+                display: block;
+
+                background: transparent;
+                border: 2px solid $gold;
+
+                color: $white;
+                font-size: $font-size-lg * 1.25;
+                font-weight: $font-weight-medium;
+                line-height: 1.2;
+                text-transform: uppercase;
+
+                margin: 0;
+                padding: 1rem;
+
+                width: 100%;
+            }
+        } // &-item
+
+        &-btn {
+            display: block;
+
+            border: none;
+            border-radius: 0.25rem;
+
+            color: $black;
+            font-size: $font-size-lg * 1.5;
+            font-weight: $font-weight-medium;
+            line-height: 1;
+            text-transform: uppercase;
+
+            padding: 1rem 1.5rem 0.75rem 1.5rem;
+            @include make-gold-gradient;
+            margin: 1rem auto;
+        }
+    } // &-form
+
+    &-logo {
+        display: block;
+
+        @include no-select;
+
+        height: 12rem;
+        width: auto;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &-controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 2rem;
+
+        &-current {
+            display: block;
+
+            color: $white;
+            font-size: $font-size-lg * 2;
+            font-weight: $font-weight-medium;
+            line-height: 1.2;
+
+            text-transform: uppercase;
+
+            margin: 0;
+            padding: 0;
+        } // &-current
+
+        &-divider {
+            display: block;
+
+            color: opacity($white, 0.3);
+            font-size: $font-size-lg * 2;
+            font-weight: $font-weight-medium;
+            line-height: 1.2;
+
+            text-transform: uppercase;
+
+            margin: 0;
+            padding: 0;
+
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        &-link {
+            display: block;
+
+            color: $gold;
+            font-size: $font-size-lg * 2;
+            font-weight: $font-weight-medium;
+            line-height: 1.2;
+
+            text-transform: uppercase;
+
+            margin: 0;
+            padding: 0;
+        } // &-link
+    }
+} // .signup

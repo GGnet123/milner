@@ -1,0 +1,36 @@
+{% extends 'layouts/clean.njk' %}
+{% set title = "Подтверждение возраста" %}
+
+{% block content %}
+<main class="age">
+    <section class="container">
+        <section class="row justify-content-center">
+            <section class="col-md-5">
+                <form class="age-form">
+                    <img class="age-logo" src="../images/common/logo.svg" alt="Miller">
+
+                    <span class="age-head">Добро пожаловать</span>
+                    <span class="age-sub">Пожалуйста выберите ваш город и введите свой возраст</span>
+
+                    <select class="age-select">
+                        <option value="almaty" selected>Алматы</option>
+                        <option value="nursultan">Нур-Султан</option>
+                        <option value="karaganda">Караганда</option>
+                    </select>
+
+                    <div class="age-date">
+                        <input class="age-input" type="number" maxlength="2" name="day" placeholder="ДД">
+                        <input class="age-input" type="number" name="month" placeholder="ММ">
+                        <input class="age-input age-input--long" type="number" name="year" placeholder="ГГГГ">
+                    </div>
+
+                    <button class="age-btn" type="submit" name="button">Подтвердить</button>
+
+                    <span class="age-help">Продолжая использование сайта вы даёте <a class="age-help-link" href="#">согласие</a> на сбор и обработку ваших данных</span>
+                </form>
+
+            </section>
+        </section>
+    </section>
+</main>
+{% endblock %}

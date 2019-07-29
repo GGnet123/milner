@@ -1,9 +1,4 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
 
 namespace app\assets;
 
@@ -17,16 +12,23 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $sourcePath = '@app/assets/app/dist';
     public $css = [
-        'css/site.css',
+        'styles/bundle.min.css',
     ];
     public $js = [
-        'watermarkjs/dist/watermark.min.js'
+        'scripts/bundle.min.js',
+    ];
+    public $jsOptions = [
+        'charset' => 'utf-8',
+    ];
+    public $publishOptions = [
+        'except' => [
+            '*.html',
+        ],
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        \yii\web\YiiAsset::class,
+        CDNAsset::class,
     ];
 }

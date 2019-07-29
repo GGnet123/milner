@@ -5,6 +5,8 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'language' => 'ru-RU',
+    'sourceLanguage' => 'en-US',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -12,6 +14,22 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    //'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app'       => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
+        'coreService' => [
+            'class' => '\app\services\CoreService',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'XGQtd5yjEguBSakZtKGAIQhga0_UQ_X8',
@@ -44,13 +62,31 @@ $config = [
         ],
         'db' => $db,
 
-        'urlManager'=>array(
-            'rules'=>array(
-            ),
-        ),
+        'urlManager' => [
+            'class' => 'yii\web\UrlManager',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                'top' => 'site/top',
+                'index' => 'site/index',
+                'qazindex' => 'site/qazindex',
+                'qaztop' => 'site/top',
+                'profile' => 'site/profile',
+                'check' => 'site/check',
+                'login' => 'site/login',
+                'logout' => 'site/logout',
+                'signup' => 'site/signup',
+                'signup?ref=/<id:\d+>' => 'site/refsignup',
+            ],
+        ],
 
     ],
     'params' => $params,
+    'on beforeRequest' => function () {
+        if(Yii::$app->session->get('language') == 'kz') {
+            Yii::$app->language = 'kk-KZ';
+        }
+    }
 ];
 
 if (YII_ENV_DEV) {

@@ -1,0 +1,5 @@
+import './plugins/header'
+import './plugins/inputmask'
+import './plugins/clipboard'
+import './plugins/hover'
+import './plugins/main'

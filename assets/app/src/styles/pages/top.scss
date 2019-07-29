@@ -1,0 +1,106 @@
+.top {
+    &-head {
+        display: block;
+
+        color: $gold;
+        @include make-gold-text;
+
+        font-size: $font-size-lg * 3;
+        font-weight: $font-weight-medium;
+        line-height: 1.2;
+        text-transform: uppercase;
+        text-align: left;
+
+        margin: 0;
+        padding: 0;
+
+        margin-bottom: 3rem;
+    }
+
+    &-table {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+
+        &-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+
+            border-bottom: 1px solid opacity($white, 0.3);
+
+            color: $white;
+            font-size: $font-size-lg * 1.25;
+            font-weight: $font-weight-medium;
+            line-height: 1.2;
+            text-transform: uppercase;
+
+            margin: 0;
+            padding: 2rem 0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        &-user {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-left: 3rem;
+            margin-right: auto;
+
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+
+        &-place {
+            background: opacity($white, 0.2);
+            border-radius: 50rem;
+            padding: 0;
+            padding-top: 0.125rem;
+            line-height: 3rem;
+            vertical-align: middle;
+            width: 3rem;
+            height: 3rem;
+            text-align: center;
+            font-size: $font-size-lg * 1.25;
+            font-weight: $font-weight-bold;
+
+            &.gold {
+                color: $black;
+                background: $gold;
+            }
+
+            &.silver {
+                color: $black;
+                background: #D7D7D7;
+            }
+
+            &.bronze {
+                color: $black;
+                background: #BF744F;
+            }
+        }
+
+        &-name {
+            margin-right: 3rem;
+        }
+
+        &-phone {
+            @include media-breakpoint-down(md) {
+                font-size: $font-size-base;
+            }
+        }
+    }
+}

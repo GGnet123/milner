@@ -1,0 +1,17 @@
+// stylelint-disable declaration-no-important
+
+@mixin bg-gradient-variant($parent, $color) {
+  #{$parent} {
+    background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x !important;
+  }
+}
+
+@mixin make-gold-gradient() {
+    background: linear-gradient(120deg,#d3bb75 0%,#e3ce9a 12%,#f2e1bd 23%,#d3bb75 58%,#f2e1bd 82%,#d3bb75 100%);
+}
+
+@mixin make-gold-text() {
+    @include make-gold-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

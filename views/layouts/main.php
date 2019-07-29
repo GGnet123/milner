@@ -1,82 +1,58 @@
 <?php
 
+use yii\helpers\Html;
+use app\assets\AppAsset;
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use app\widgets\Alert;
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+$bundle = AppAsset::register($this);
 
-AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<!doctype html>
+<html lang="<?= Yii::$app->language ?>" dir="ltr">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WNZ9XB6');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge; chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title><?= Html::encode($this->title) ?> · Miller Music Amplified</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= $bundle->baseUrl ?>/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= $bundle->baseUrl ?>/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= $bundle->baseUrl ?>/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="<?= $bundle->baseUrl ?>/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?= $bundle->baseUrl ?>/android-chrome-192x192.png">
+    <link rel="manifest" href="<?= $bundle->baseUrl ?>/site.webmanifest">
+    <link rel="mask-icon" href="<?= $bundle->baseUrl ?>/safari-pinned-tab.svg" color="#995a9d">
+    <meta name="msapplication-TileColor" content="#995a9d">
+    <meta name="msapplication-TileImage" content="<?= $bundle->baseUrl ?>/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
+    <meta name="msapplication-tap-highlight" content="no">
+    <?= Html::csrfMetaTags() ?>
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNZ9XB6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            ['label' => 'ImageEdit', 'url' => ['/image/image']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
-        ],
-    ]);
-    NavBar::end();
-    ?>
+    <?php $this->beginBody() ?>
+    <?= $this->render('components/header') ?>
+    <?= $content ?>
+    <?= $this->render('components/footer') ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
-
-<?php $this->endBody() ?>
+    <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>

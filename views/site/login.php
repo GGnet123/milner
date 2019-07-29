@@ -1,47 +1,43 @@
 <?php
 
-/* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model app\models\LoginForm */
+use app\assets\AppAsset;
+use yii\helpers\Url;
+use yii\web\View;
 
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+/* @var $this View */
 
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+// $bundle = Yii::$app->assetManager->getBundle(AppAsset::class);
+$bundle = AppAsset::register($this);
+
+$this->title = Yii::t('app', 'Вход');
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+<main class="login">
+    <section class="container">
+        <section class="row justify-content-center">
+            <section class="col-md-4">
+                <form class="login-form" method="post">
+                    <img class="login-logo" src="<?= $bundle->baseUrl ?>/images/common/logo.png" alt="Miller Music Amplified">
 
-    <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'layout' => 'horizontal',
-        'fieldConfig' => [
-            'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            'labelOptions' => ['class' => 'col-lg-1 control-label'],
-        ],
-    ]); ?>
+                    <div class="login-controls">
+                        <span class="login-controls-current"><?=Yii::t('app', 'Вход')?></span>
+                        <span class="login-controls-divider">/</span>
+                        <a class="login-controls-link" href="/signup"><?=Yii::t('app', 'Регистрация')?></a>
+                    </div>
 
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                    <div class="login-form-item">
+                        <label class="login-form-item-label" for="phone"><?=Yii::t('app', 'Телефон')?></label>
+                        <input class="login-form-item-input" type="text" name="phone" data-inputmask="'mask': '+7(799) 999-99-99'" required>
+                    </div>
+                    <div class="login-form-item">
+                        <label class="login-form-item-label" for="phone"><?=Yii::t('app', 'Пароль')?></label>
+                        <input class="login-form-item-input" type="password" name="password" required>
+                    </div>
 
-        <?= $form->field($model, 'password')->passwordInput() ?>
+                    <button class="login-form-btn" type="submit" name="button"><?=Yii::t('app', 'Войти')?></button>
+                </form>
 
-        <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-        ]) ?>
-
-        <div class="form-group">
-            <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
-        </div>
-
-    <?php ActiveForm::end(); ?>
-
-    <div class="col-lg-offset-1" style="color:#999;">
-        You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-        To modify the username/password, please check out the code <code>app\models\User::$users</code>.
-    </div>
-</div>
+            </section>
+        </section>
+    </section>
+</main>

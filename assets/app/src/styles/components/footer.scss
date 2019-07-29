@@ -1,0 +1,70 @@
+.footer {
+    &-wrap {
+        border-top: 2px solid $gold;
+
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        margin-top: 3rem;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-logo {
+        display: block;
+
+        @include no-select;
+
+        max-width: 6rem;
+        height: auto;
+    }
+
+    &-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &-head {
+        display: block;
+
+        color: $white;
+        font-size: $font-size-lg * 1.25;
+        font-weight: $font-weight-medium;
+        line-height: 1;
+
+        text-transform: uppercase;
+
+        margin: 0;
+        padding: 0;
+
+        margin-right: 0.5rem;
+    }
+
+    &-link {
+
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+
+        svg {
+            display: block;
+            user-select: none;
+
+            height: 2rem;
+            width: 2rem;
+
+            fill: $gold;
+
+            transition: $transition-base;
+        }
+
+        &:hover {
+            svg {
+                fill: $white;
+            }
+        }
+    }
+} // .footer

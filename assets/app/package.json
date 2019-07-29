@@ -1,0 +1,54 @@
+{
+    "name": "millermusic",
+    "version": "1.0.0",
+    "homepage": "https://m-music.kz",
+    "description": "Miller Music Amplified website",
+    "author": {
+        "name": "NURNUR",
+        "email": "hello@nurnur.kz",
+        "url": "https://nurnur.kz"
+    },
+    "repositoty": {
+        "type": "git",
+        "url": "git+https://gitlab.com/nurnur/clients/millermusic.git"
+    },
+    "bugs": {
+        "url": "https://gitlab.com/nurnur/clients/millermusic/issues"
+    },
+    "keywords": [
+        "website",
+        "gulp",
+        "webpack"
+    ],
+    "private": true,
+    "scripts": {
+        "dev": "gulp",
+        "prod": "gulp build"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.5",
+        "babel-preset-env": "^1.7.0",
+        "browser-sync": "^2.26.7",
+        "del": "^3.0.0",
+        "ejs": "^2.6.2",
+        "express": "^4.17.1",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^5.0.0",
+        "gulp-babel": "^7.0.1",
+        "gulp-clean-css": "^3.10.0",
+        "gulp-nodemon": "^2.4.2",
+        "gulp-nunjucks-render": "^2.2.2",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-uglify": "^3.0.1",
+        "webpack": "^4.35.3",
+        "webpack-stream": "^4.0.3"
+    },
+    "engines": {
+        "node": ">= 6.0.0",
+        "npm": ">= 3.0.0"
+    }
+}
