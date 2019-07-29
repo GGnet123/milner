@@ -27,7 +27,9 @@ class SiteController extends Controller
             $bday = $day . '.' . $month . '.' . $year;
 
             $age = date_diff(date_create($record), date_create('now'))->y;
-            
+            /// something has changed
+
+            die('asd');
             $session->set('bday', $bday);
             $session->set('age', $age);
 
